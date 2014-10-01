@@ -12,6 +12,7 @@ nailgun-db:
   postgres_database.present:
     - name: nailgun
     - db_user: nailgun
+    - db_password: nailgun
     - require:
       - pkg: packages
       - postgres_user: nailgun-user

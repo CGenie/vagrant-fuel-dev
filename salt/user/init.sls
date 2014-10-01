@@ -1,6 +1,14 @@
+vagrant-virtualenv-path:
+  file.append:
+    - name: /home/vagrant/.bashrc
+    - text: export WORKON_HOME=/home/vagrant/.virtualenvs
+    - require:
+      - pkg: packages
+
 vagrant-virtualenv-bash-source:
   file.append:
     - name: /home/vagrant/.bashrc
-    - text: source /usr/local/bin/virtualenvwrapper.sh
+    - text: . /etc/bash_completion.d/virtualenvwrapper
     - require:
       - pkg: packages
+      - file: vagrant-virtualenv-path
