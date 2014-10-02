@@ -1,14 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-$script = <<SCRIPT
-sudo /vagrant/bootstrap.sh
-sudo /vagrant/nailgun-docs.sh
-sudo /vagrant/fuel-docs.sh
-sudo /vagrant/nailgun.sh
-sudo screen /vagrant/fake-ui.sh
-SCRIPT
-
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
@@ -72,13 +64,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #   vb.gui = true
     #
     # Use VBoxManage to customize the VM. For example to change memory:
-    vb.customize ["modifyvm", :id, "--ioapic", "on", "--memory", "2048"]
+    vb.customize ["modifyvm", :id, "--ioapic", "on", "--memory", "1024"]
   end
   #
   # View the documentation for the provider you're using for more
   # information on available options.
-
-  #config.vm.provision "shell", inline: $script
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.

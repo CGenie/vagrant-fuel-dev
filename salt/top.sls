@@ -2,7 +2,7 @@ base:
   '*':
     - packages
     - postgresql
-    - sources
+    #- sources
     - nailgun
     - user
     - virtualenv

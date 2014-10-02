@@ -45,3 +45,7 @@ packages:
     - require:
       - pkgrepo: pkgrepos
 
+py26-fake-interpreter:
+  file.symlink:
+    - name: /usr/bin/python2.6
+    - target: /usr/bin/python2.7
