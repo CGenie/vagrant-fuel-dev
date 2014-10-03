@@ -29,3 +29,9 @@ fuel-virtualenv-requirements:
     - makedirs: True
     - user: vagrant
     - group: vagrant
+
+/var/log/remote:
+  file.directory:
+    - makedirs: True
+    - user: vagrant
+    - group: vagrant

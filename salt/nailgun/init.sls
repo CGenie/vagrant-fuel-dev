@@ -16,3 +16,8 @@ nailgun-db:
     - require:
       - pkg: packages
       - postgres_user: nailgun-user
+
+/usr/bin/nailgun_clean_db.sh:
+  file.managed:
+    - source: salt://nailgun/nailgun_clean_db.sh
+    - mode: 0777

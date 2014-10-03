@@ -64,7 +64,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #   vb.gui = true
     #
     # Use VBoxManage to customize the VM. For example to change memory:
-    vb.customize ["modifyvm", :id, "--ioapic", "on", "--memory", "1024"]
+    vb.customize ["modifyvm", :id, "--ioapic", "on", "--memory", "800"]
   end
   #
   # View the documentation for the provider you're using for more
@@ -140,7 +140,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     salt.minion_config = "salt_minion"
     salt.colorize = true
     salt.log_level = "all"
-    salt.run_highstate = true
+    #salt.run_highstate = true
 
   end
 
