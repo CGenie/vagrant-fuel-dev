@@ -26,7 +26,7 @@ to set up the virtualenv.
 
 Then run
 
-``
+```
 vagrant ssh
 workon fuel
 ```
