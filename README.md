@@ -37,7 +37,7 @@ to SSH into the virtual machine and set up the Python virtualenv. To start the s
 /sources/fuel-web/nailgun/manage.py run --fake-tasks
 ```
 
-and point your browser to [http://localhost:8200] (username/password for the test env is `admin`/`admin`).
+and point your browser to [http://localhost:8200](http://localhost:8200) -- username/password for the test env is `admin`/`admin`.
 
 Sometimes it might be necessary to repopulate the DB with fixtures, to do this just type
 
@@ -55,4 +55,4 @@ cd /sources/fuel-web
 
 The `sources` directory is mounted under `/sources` on the Vagrant machine using Rsync for better performance.
 
-For more information see [http://docs.mirantis.com/fuel-dev/develop/nailgun/development/env.html] and [http://docs.mirantis.com/fuel-dev/develop/env.html]
+For more information see http://docs.mirantis.com/fuel-dev/develop/nailgun/development/env.html and http://docs.mirantis.com/fuel-dev/develop/env.html
