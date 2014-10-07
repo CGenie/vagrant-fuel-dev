@@ -55,6 +55,12 @@ cd /sources/fuel-web
 ./run_tests.sh -w -l
 ```
 
-The `sources` directory is mounted under `/sources` on the Vagrant machine using Rsync for better performance.
+The `sources` directory is mounted under `/sources` on the Vagrant machine using Rsync for better performance. If you want Vagrant to automatically rsync your local directory to the virtualmachine run
+
+```
+vagrant rsync-auto
+```
+
+Note that this is a one-way sync, i.e. from your local machine to the virtual machine, not the other way around.
 
 For more information see http://docs.mirantis.com/fuel-dev/develop/nailgun/development/env.html and http://docs.mirantis.com/fuel-dev/develop/env.html
