@@ -63,4 +63,6 @@ vagrant rsync-auto
 
 Note that this is a one-way sync, i.e. from your local machine to the virtual machine, not the other way around.
 
+There is also the `/vagrant/sources` folder where `sources` are mounted too, but using the standard VirtualBox Synchronized Folders which is extremely slow.
+
 For more information see http://docs.mirantis.com/fuel-dev/develop/nailgun/development/env.html and http://docs.mirantis.com/fuel-dev/develop/env.html
