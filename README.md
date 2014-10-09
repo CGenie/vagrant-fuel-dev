@@ -17,10 +17,19 @@ Then run
 
 ```
 vagrant ssh
+
+sudo su
+
+salt-call state.highstate --local
+```
+
+to SSH into the machine and initially set up the environment. Then in on the virtual machine as user vagrant you can do
+
+```
 workon fuel
 ```
 
-to SSH into the virtual machine and set up the Python virtualenv. To start the server type
+to activate the Python virtualenv. To start the server type
 
 ```
 /sources/fuel-web/nailgun/manage.py run --fake-tasks
