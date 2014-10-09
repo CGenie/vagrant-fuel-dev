@@ -7,19 +7,6 @@ Vagrant SaltStack-based configuration for a development environment of Mirantis 
 
 Clone and `cd` into this repo then run
 
-```bash
-mkdir sources
-cd sources
-git clone https://github.com/stackforge/fuel-main
-git clone https://github.com/stackforge/fuel-web
-git clone https://github.com/stackforge/fuel-astute
-git clone https://github.com/stackforge/fuel-ostf
-git clone https://github.com/stackforge/fuel-library
-git clone https://github.com/stackforge/fuel-docs
-```
-
-Then just run
-
 ```
 vagrant up
 ```
