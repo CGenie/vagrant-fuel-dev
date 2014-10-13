@@ -36,9 +36,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # vagrant rsync-auto
   # to fire the service for automatic rsync synchronization
   config.vm.synced_folder './sources', '/sources', type: "rsync", rsync__auto: true,
-    rsync__args: ["--verbose", "--archive", "-z"]#, # no --delete since .tox dirs would
-                                                  # be deleted all the time
-    #rsync__exclude: ['nailgun/.tox']
+    rsync__args: ["--verbose", "--archive", "-z", "--delete"],
+    rsync__exclude: ['nailgun/.tox']
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
