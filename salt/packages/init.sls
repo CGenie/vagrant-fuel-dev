@@ -29,6 +29,7 @@ packages:
       - python-nose
       - python-software-properties
       - python-yaml
+      - rsync
       - ruby
       - ruby-dev
       - rubygems

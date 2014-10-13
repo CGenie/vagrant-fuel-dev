@@ -5,43 +5,11 @@ sources-directory:
     - require:
       - pkg: packages
 
-fuel-main-source:
-  git.latest:
-    - name: https://github.com/stackforge/fuel-main
-    - target: /vagrant/sources/fuel-main
-    - unless: ls /vagrant/sources/fuel-main
-    - require:
-      - file: sources-directory
-
-fuel-web-source:
-  git.latest:
-    - name: https://github.com/stackforge/fuel-web
-    - target: /vagrant/sources/fuel-web
-    - unless: ls /vagrant/sources/fuel-web
-    - require:
-      - file: sources-directory
-
 fuel-astute-source:
   git.latest:
     - name: https://github.com/stackforge/fuel-astute
     - target: /vagrant/sources/fuel-astute
     - unless: ls /vagrant/sources/fuel-astute
-    - require:
-      - file: sources-directory
-
-fuel-ostf-source:
-  git.latest:
-    - name: https://github.com/stackforge/fuel-ostf
-    - target: /vagrant/sources/fuel-ostf
-    - unless: ls /vagrant/sources/fuel-ostf
-    - require:
-      - file: sources-directory
-
-fuel-library-source:
-  git.latest:
-    - name: https://github.com/stackforge/fuel-library
-    - target: /vagrant/sources/fuel-library
-    - unless: ls /vagrant/sources/fuel-library
     - require:
       - file: sources-directory
 
@@ -53,6 +21,30 @@ fuel-docs-source:
     - require:
       - file: sources-directory
 
+fuel-library-source:
+  git.latest:
+    - name: https://github.com/stackforge/fuel-library
+    - target: /vagrant/sources/fuel-library
+    - unless: ls /vagrant/sources/fuel-library
+    - require:
+      - file: sources-directory
+
+fuel-main-source:
+  git.latest:
+    - name: https://github.com/stackforge/fuel-main
+    - target: /vagrant/sources/fuel-main
+    - unless: ls /vagrant/sources/fuel-main
+    - require:
+      - file: sources-directory
+
+fuel-ostf-source:
+  git.latest:
+    - name: https://github.com/stackforge/fuel-ostf
+    - target: /vagrant/sources/fuel-ostf
+    - unless: ls /vagrant/sources/fuel-ostf
+    - require:
+      - file: sources-directory
+
 fuel-specs-source:
   git.latest:
     - name: https://github.com/stackforge/fuel-specs
@@ -60,3 +52,24 @@ fuel-specs-source:
     - unless: ls /vagrant/sources/fuel-specs
     - require:
       - file: sources-directory
+
+fuel-web-source:
+  git.latest:
+    - name: https://github.com/stackforge/fuel-web
+    - target: /vagrant/sources/fuel-web
+    - unless: ls /vagrant/sources/fuel-web
+    - require:
+      - file: sources-directory
+
+rsync-sources:
+  cmd.run:
+    - name: rsync -az /vagrant/sources/ /sources
+    - creates: /sources/fuel-web  # creates more but I think Salt doesn't support this
+    - require:
+      - git: fuel-astute-source
+      - git: fuel-docs-source
+      - git: fuel-library-source
+      - git: fuel-main-source
+      - git: fuel-ostf-source
+      - git: fuel-specs-source
+      - git: fuel-web-source

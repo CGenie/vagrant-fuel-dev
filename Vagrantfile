@@ -37,7 +37,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # to fire the service for automatic rsync synchronization
   config.vm.synced_folder './sources', '/sources', type: "rsync", rsync__auto: true,
     rsync__args: ["--verbose", "--archive", "-z", "--delete"],
-    rsync__exclude: ['nailgun/.tox']
+    rsync__exclude: ['nailgun/.tox'],
+    create: true
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -59,7 +60,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Example for VirtualBox:
   #
   config.vm.provider :virtualbox do |vb|
-    vb.name = "vagrant-mirantis"
+    vb.name = "vagrant-mirantis-test"
     #   # Don't boot with headless mode
     #   vb.gui = true
     #
