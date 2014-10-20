@@ -16,10 +16,12 @@ packages:
       - kpartx
       - libmysqlclient-dev
       - libvirt-bin
+      - firefox
       - make
       - nginx
       - nodejs
       #- npm
+      - openjdk-6-jre
       - postgresql
       - postgresql-server-dev-9.1
       - python-dev
@@ -41,6 +43,11 @@ packages:
       - vim-nox
       - python-virtualenv
       - virtualenvwrapper
+      - x11-utils
+      - x11-xserver-utils
+      - xinit
+      - xserver-xorg-video-dummy
+      - xvfb
       - yum
       - yum-utils
     - require:
