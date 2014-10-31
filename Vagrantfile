@@ -140,6 +140,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ## For masterless, mount your salt file root
   config.vm.synced_folder "salt/", "/srv/salt/"
 
+  # Make LC_ALL default to en_US.UTF-8 instead of en_US.
+  # See: https://github.com/mitchellh/vagrant/issues/1188
+  config.vm.provision "shell", inline: 'echo \'LC_ALL="en_US.UTF-8"\' > /etc/default/locale'
+
   ## Use all the defaults:
   config.vm.provision :salt do |salt|
 
