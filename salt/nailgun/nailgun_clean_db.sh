@@ -1,5 +1,9 @@
 #!/bin/bash
 
+sudo su postgres -c "psql -c \"SELECT pg_terminate_backend(procpid) FROM pg_stat_activity WHERE procpid <> pg_backend_pid() AND datname = 'nailgun';\""
+sudo su postgres -c "psql -c \"DROP DATABASE nailgun;\""
+sudo su postgres -c "psql -c \"CREATE DATABASE nailgun WITH OWNER nailgun;\""
+
 . /etc/bash_completion.d/virtualenvwrapper
 
 workon fuel
