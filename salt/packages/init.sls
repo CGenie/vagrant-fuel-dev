@@ -57,3 +57,10 @@ py26-fake-interpreter:
   file.symlink:
     - name: /usr/bin/python2.6
     - target: /usr/bin/python2.7
+
+gitconfig:
+  file.managed:
+    - name: /home/vagrant/.gitconfig
+    - source: salt://packages/gitconfig
+    - user: vagrant
+    - group: vagrant
