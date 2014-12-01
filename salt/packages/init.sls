@@ -1,6 +1,9 @@
 pkgrepos:
-  pkgrepo.managed:
-    - ppa: chris-lea/node.js
+  cmd.run:
+    - name: curl -sL https://deb.nodesource.com/setup | bash -
+    - user: root
+    - group: root
+    - unless: ls /etc/apt/sources.list.d/nodesource.list
 
 packages:
   pkg.latest:
@@ -51,7 +54,7 @@ packages:
       - yum
       - yum-utils
     - require:
-      - pkgrepo: pkgrepos
+      - cmd: pkgrepos
 
 py26-fake-interpreter:
   file.symlink:

@@ -9,3 +9,5 @@ pip install -r /sources/fuel-web/nailgun/requirements.txt
 pip install -r /sources/fuel-web/nailgun/test-requirements.txt
 
 pip install tox
+pip install ipython
+pip install pudb

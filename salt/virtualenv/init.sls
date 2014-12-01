@@ -35,3 +35,12 @@ fuel-virtualenv-requirements:
     - makedirs: True
     - user: vagrant
     - group: vagrant
+
+/home/vagrant/.virtualenvs/fuel/bin/postactivate:
+  file.managed:
+    - source: salt://virtualenv/postactivate
+    - user: vagrant
+    - group: vagrant
+    - mode: 744
+    - require:
+      - virtualenv: fuel-virtualenv
