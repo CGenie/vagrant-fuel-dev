@@ -9,6 +9,7 @@ pkgrepos:
     - user: root
     - group: root
     - unless: ls /etc/apt/sources.list.d/nodesource.list
+    - shell: /bin/bash
     - require:
       - pkg: packages-initial
 
@@ -25,7 +26,7 @@ packages:
       - kpartx
       - libmysqlclient-dev
       - libvirt-bin
-      - firefox
+      #- firefox
       - make
       - nginx
       - nodejs
@@ -52,11 +53,11 @@ packages:
       - vim-nox
       - python-virtualenv
       - virtualenvwrapper
-      - x11-utils
-      - x11-xserver-utils
-      - xinit
-      - xserver-xorg-video-dummy
-      - xvfb
+      #- x11-utils
+      #- x11-xserver-utils
+      #- xinit
+      #- xserver-xorg-video-dummy
+      #- xvfb
       - yum
       - yum-utils
     - require:
