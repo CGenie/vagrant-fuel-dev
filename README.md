@@ -45,6 +45,8 @@ Sometimes it might be necessary to repopulate the DB with fixtures, to do this j
 ./manage.py loaddata nailgun/fixtures/sample_environment.json  # Loads fake nodes
 ```
 
+As a shortut, a script `nailgun_clean_db.sh` is provided to reinitialize the database using the above commands.
+
 To run tests (webui):
 ```
 cd /sources/fuel-web
