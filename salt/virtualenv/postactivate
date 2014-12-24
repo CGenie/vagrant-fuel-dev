@@ -1,1 +1,7 @@
-export PYTHONPATH=/sources/fuel-web/nailgun
+#!/bin/bash
+
+export WORK_DIR=/sources/fuel-web
+
+export PYTHONPATH=$WORK_DIR/nailgun
+
+cd $WORK_DIR
