@@ -69,6 +69,14 @@ fuel-web-source:
     - require:
       - file: sources-directory
 
+python-fuelclient:
+  git.latest:
+    - name: https://github.com/stackforge/python-fuelclient
+    - target: /vagrant/sources/python-fuelclient
+    - unless: ls /vagrant/sources/python-fuelclient
+    - require:
+      - file: sources-directory
+
 rsync-sources:
   cmd.run:
     - name: rsync -az /vagrant/sources/ /sources
@@ -82,3 +90,4 @@ rsync-sources:
       - git: fuel-plugins-source
       - git: fuel-specs-source
       - git: fuel-web-source
+      - git: python-fuelclient
