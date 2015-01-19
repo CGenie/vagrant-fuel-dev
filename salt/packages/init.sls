@@ -21,6 +21,7 @@ packages:
       - extlinux
       - genisoimage
       - git
+      - htop
       - imagemagick
       - isomd5sum
       - kpartx
