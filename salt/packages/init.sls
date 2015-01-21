@@ -21,6 +21,7 @@ packages:
       - extlinux
       - genisoimage
       - git
+      - htop
       - imagemagick
       - isomd5sum
       - kpartx
@@ -33,7 +34,7 @@ packages:
       #- npm
       - openjdk-6-jre
       - postgresql
-      - postgresql-server-dev-9.1
+      - postgresql-server-dev-9.3
       - python-dev
       - python-ipaddr
       - python-paramiko
@@ -44,7 +45,7 @@ packages:
       - rsync
       - ruby
       - ruby-dev
-      - rubygems
+      - rubygems-integration
       - screen
       - software-properties-common
       - tmux

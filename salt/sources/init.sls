@@ -45,6 +45,14 @@ fuel-main-source:
     - require:
       - file: sources-directory
 
+fuel-plugins-source:
+  git.latest:
+    - name: https://github.com/stackforge/fuel-plugins
+    - target: /vagrant/sources/fuel-plugins
+    - unless: ls /vagrant/sources/fuel-plugins
+    - require:
+      - file: sources-directory
+
 fuel-ostf-source:
   git.latest:
     - name: https://github.com/stackforge/fuel-ostf
@@ -69,6 +77,14 @@ fuel-web-source:
     - require:
       - file: sources-directory
 
+python-fuelclient:
+  git.latest:
+    - name: https://github.com/stackforge/python-fuelclient
+    - target: /vagrant/sources/python-fuelclient
+    - unless: ls /vagrant/sources/python-fuelclient
+    - require:
+      - file: sources-directory
+
 rsync-sources:
   cmd.run:
     - name: rsync -az /vagrant/sources/ /sources
@@ -80,5 +96,7 @@ rsync-sources:
       - git: fuel-library-source
       - git: fuel-main-source
       - git: fuel-ostf-source
+      - git: fuel-plugins-source
       - git: fuel-specs-source
       - git: fuel-web-source
+      - git: python-fuelclient
