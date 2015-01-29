@@ -41,18 +41,19 @@ packages:
       - python-pip
       - python-nose
       - python-software-properties
+      - python-virtualenv
       - python-yaml
       - rsync
       - ruby
       - ruby-dev
       - rubygems-integration
       - screen
+      - silversearcher-ag
       - software-properties-common
       - tmux
       - unzip
       - vim
       - vim-nox
-      - python-virtualenv
       - virtualenvwrapper
       #- x11-utils
       #- x11-xserver-utils
