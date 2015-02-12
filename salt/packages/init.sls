@@ -16,6 +16,7 @@ pkgrepos:
 packages:
   pkg.latest:
     - pkgs:
+      - bundler
       - build-essential
       - debootstrap
       - extlinux
