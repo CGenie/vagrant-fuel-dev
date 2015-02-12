@@ -38,7 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder './sources', '/sources', type: "rsync", rsync__auto: true,
     rsync__args: ["--verbose", "--archive", "-z", "--delete"],
     rsync__exclude: [
-        'nailgun/.tox',
+        '*/.tox',
         'nailgun/static/js/libs/bower',
         'nailgun/node_modules',
         'test_run'
