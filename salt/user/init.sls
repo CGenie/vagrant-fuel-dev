@@ -12,3 +12,9 @@ vagrant-virtualenv-bash-source:
     - require:
       - pkg: packages
       - file: vagrant-virtualenv-path
+
+/home/vagrant/.bash_profile:
+  file.managed:
+    - source: salt://user/vagrant-bash-profile
+    - user: vagrant
+    - group: vagrant

@@ -31,12 +31,33 @@ raemon-source:
     - group: vagrant
     - unless: ls /home/vagrant/raemon
 
-raemon-gem:
+rvm-keys:
   cmd.run:
-    - name: gem build raemon.gemspec && gem install raemon-0.3.0.gem
-    - cwd: /home/vagrant/raemon
+    - name: gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
     - user: vagrant
     - group: vagrant
+
+get-rvm-io:
+  cmd.run:
+    - name: bash salt://nailgun/get-rvm-io.sh stable
+    - unless: ls /usr/local/rvm
+    - require:
+      - cmd: rvm-keys
+
+packages-ruby-2.1:
+  cmd.run:
+    - name: source /etc/profile.d/rvm.sh && rvm install 2.1
+    - unless: ls /usr/local/rvm/rubies/ruby-2.1.5/bin/ruby
+    - require:
+      - cmd: get-rvm-io
+
+raemon-gem:
+  cmd.run:
+    - name: source /etc/profile.d/rvm.sh && rvm user gemsets && rvm gemset create astute && rvm use 2.1@astute && gem build raemon.gemspec && gem install raemon-0.3.0.gem && gem install bundler
+    - user: vagrant
+    - group: vagrant
+    - cwd: /home/vagrant/raemon
     - unless: /home/vagrant/raemon/raemon-0.3.0.gem
     - require:
+      - cmd: packages-ruby-2.1
       - git: raemon-source

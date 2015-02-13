@@ -45,7 +45,7 @@ packages:
       - python-virtualenv
       - python-yaml
       - rsync
-      - ruby
+      - ruby2.0
       - ruby-dev
       - rubygems-integration
       - screen
@@ -77,3 +77,9 @@ gitconfig:
     - source: salt://packages/gitconfig
     - user: vagrant
     - group: vagrant
+
+/etc/tmux.conf:
+  file.managed:
+    - source: salt://packages/tmux.conf
+    - require:
+      - pkg: packages
