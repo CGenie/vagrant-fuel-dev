@@ -34,12 +34,12 @@ raemon-source:
 rvm-keys:
   cmd.run:
     - name: gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-    - user: vagrant
-    - group: vagrant
 
 get-rvm-io:
-  cmd.run:
-    - name: bash salt://nailgun/get-rvm-io.sh stable
+  cmd.script:
+    - name: salt://nailgun/get-rvm-io.sh stable
+    - source: salt://nailgun/get-rvm-io.sh
+    - shell: /bin/bash
     - unless: ls /usr/local/rvm
     - require:
       - cmd: rvm-keys
