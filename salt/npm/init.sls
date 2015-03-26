@@ -1,7 +1,7 @@
-grunt-cli:
+gulp:
   cmd.run:
-    - name: npm install -g grunt-cli
-    - unless: npm ls -g grunt-cli
+    - name: npm install -g gulp
+    - unless: npm ls -g gulp
 
 phantomjs:
   cmd.run:
@@ -21,11 +21,11 @@ fuel-web-npm-install:
     - cwd: /sources/fuel-web/nailgun
     - require:
       #- git: fuel-web-source
-      - cmd: grunt-cli
+      - cmd: gulp
 
-fuel-web-grunt-bower:
+fuel-web-gulp-bower:
   cmd.run:
-    - name: grunt bower
+    - name: gulp bower
     - cwd: /sources/fuel-web/nailgun
     - require:
       - cmd: fuel-web-npm-install
@@ -39,4 +39,4 @@ fuel-web-owner:
       - user
       - group
     - require:
-      - cmd: fuel-web-grunt-bower
+      - cmd: fuel-web-gulp-bower
