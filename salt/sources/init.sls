@@ -13,6 +13,14 @@ fuel-astute-source:
     - require:
       - file: sources-directory
 
+fuel-dev-tools:
+  git.latest:
+    - name: https://github.com/stackforge/fuel-dev-tools
+    - target: /vagrant/sources/fuel-dev-tools
+    - unless: ls /vagrant/sources/fuel-dev-tools
+    - require:
+      - file: sources-directory
+
 fuel-devops-source:
   git.latest:
     - name: https://github.com/stackforge/fuel-devops
@@ -92,6 +100,7 @@ rsync-sources:
     - require:
       - git: fuel-astute-source
       - git: fuel-docs-source
+      - git: fuel-dev-tools
       - git: fuel-devops-source
       - git: fuel-library-source
       - git: fuel-main-source
