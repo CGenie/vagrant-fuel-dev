@@ -1,6 +1,8 @@
 vagrant-fuel-dev
 ================
 
+*NOTE*: This repo is now deprecated in favor of https://github.com/stackforge/fuel-dev-tools
+
 Vagrant SaltStack-based configuration for a development environment of Mirantis Fuel platform.
 
 ## Usage
